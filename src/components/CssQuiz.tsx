@@ -16,7 +16,7 @@ const CssQuiz = () => {
 
   return (
     <section className="flex justify-center items-center flex-col h-screen">
-      <div className="w-[50%] m-auto">
+      <div className="md:max-w-5xl w-[90%] m-auto">
         <div className="mb-8 w-[80%] m-auto">
           <TimeLiner
             currentIndex={state.currentIndex}
@@ -33,7 +33,7 @@ const CssQuiz = () => {
 
               {state.error && <ErrorAnswer />}
 
-              <div className="grid grid-cols-2 gap-5 mb-5">
+              <div className="md:grid md:grid-cols-2 gap-6 mb-5 flex flex-col">
                 {question.options.map((option, index) => (
                   <div key={index}>
                     <AnswerBtn
