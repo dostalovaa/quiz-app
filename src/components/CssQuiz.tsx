@@ -9,7 +9,7 @@ import SubmitBtn from "./ui/SubmitBtn";
 import AnswerBtn from "./ui/AnswerBtn";
 
 const CssQuiz = () => {
-  const { state } = useQuiz();
+  const { state, theme } = useQuiz();
   const [question, setQuestion] = useState(cssQuestions[0]);
   const [answer, setAnswer] = useState("");
   const [btn, setBtn] = useState(false);
@@ -24,16 +24,26 @@ const CssQuiz = () => {
           />
         </div>
 
-        <div className="bg-[#F0F0F0] rounded-2xl p-10 flex flex-col justify-center items-center text-center">
+        <div
+          className={` rounded-2xl p-10 flex flex-col justify-center items-center text-center mb-2 ${
+            theme === "light" ? "bg-[#F0F0F0]" : "bg-[#585858]"
+          }`}
+        >
           {state.done ? (
             <PlayAgain score={state.score} currentIndex={state.currentIndex} />
           ) : (
             <>
-              <h3 className="font-bold text-2xl mb-4">{question.question}</h3>
+              <h3
+                className={`font-bold lg:text-3xl md:text-2xl mb-4 text-[18px] ${
+                  theme === "light" ? "text-black" : "text-white"
+                }`}
+              >
+                {question.question}
+              </h3>
 
               {state.error && <ErrorAnswer />}
 
-              <div className="md:grid md:grid-cols-2 gap-6 mb-5 flex flex-col">
+              <div className="md:grid md:grid-cols-2 md:gap-6 md:mb-5 flex flex-col gap-3 mb-3">
                 {question.options.map((option, index) => (
                   <div key={index}>
                     <AnswerBtn

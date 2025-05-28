@@ -17,7 +17,7 @@ const AnswerBtn = ({
   const isCorrect = correctAnswer === option;
   const isWrongSelected = isSelected && !isCorrect;
 
-  const baseClass = "h-[70px] w-[300px] rounded-md p-2 ";
+  const baseClass = "h-[70px] w-[300px] rounded-md p-2";
 
   let colorClass = "";
   if (isAnswered) {
@@ -42,7 +42,7 @@ const AnswerBtn = ({
     <button
       onClick={() => onSelect(option)}
       disabled={isAnswered}
-      className={`${baseClass} ${colorClass}`}
+      className={`${baseClass} ${colorClass} `}
     >
       {option}
     </button>

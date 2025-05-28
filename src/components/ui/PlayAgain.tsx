@@ -7,7 +7,7 @@ type PlayAgainProps = {
 };
 
 const PlayAgain = ({ score, currentIndex }: PlayAgainProps) => {
-  const { playAgain } = useQuiz();
+  const { playAgain, theme } = useQuiz();
   const navigate = useNavigate();
 
   const handleBrowserBack = () => {
@@ -16,8 +16,18 @@ const PlayAgain = ({ score, currentIndex }: PlayAgainProps) => {
   };
   return (
     <div className="flex flex-col items-center gap-3">
-      <h3 className="text-3xl font-bold">Quiz completed</h3>
-      <p className="text-2xl">
+      <h3
+        className={`text-3xl font-bold ${
+          theme === "light" ? "text-black" : "text-white"
+        }`}
+      >
+        Quiz completed
+      </h3>
+      <p
+        className={`text-2xl ${
+          theme === "light" ? "text-black" : "text-white"
+        }`}
+      >
         Your scored:
         <span className="pl-2">
           {score} / {currentIndex}
@@ -26,7 +36,7 @@ const PlayAgain = ({ score, currentIndex }: PlayAgainProps) => {
 
       <button
         onClick={handleBrowserBack}
-        className="py-2 border-2 border-[#3C087B] bg-white w-[50%] rounded m-auto font-semibold cursor-pointer"
+        className="py-2 border-2 border-[#3C087B] bg-white w-[50%] rounded m-auto font-semibold cursor-pointer hover:bg-[#b78eea] hover:text-white"
       >
         Play Again
       </button>

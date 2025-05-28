@@ -4,9 +4,18 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+.light {
   background-image: url(img/bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+}
+.dark {
+  background-image: url(img/bg-dark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
