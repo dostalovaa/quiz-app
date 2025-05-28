@@ -2,13 +2,13 @@
 An interactive quiz application built with React, TypeScript, Tailwind CSS, and Material UI (MUI). Users answer multiple-choice questions and receive their final score at the end.
 
 🔧 Features
-Multiple-choice questions with instant answer handling
+- Multiple-choice questions with instant answer handling
 
-Score calculation after quiz completion
+- Score calculation after quiz completion
 
-Responsive UI using Tailwind and MUI components
+- Responsive UI using Tailwind and MUI components
 
-Fully typed with TypeScript for better safety and autocompletion
+- Fully typed with TypeScript for better safety and autocompletion
 
 🛠 Technologies
 - React
