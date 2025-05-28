@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { htmlQuestions } from "../data/htmlQuestions";
 import { useQuiz } from "../hooks/useQuiz";
+import type { Question } from "../types/question";
 import TimeLiner from "./ui/TimeLiner";
 import ErrorAnswer from "./ui/ErrorAnswer";
 import PlayAgain from "./ui/PlayAgain";
@@ -10,9 +11,9 @@ import AnswerBtn from "./ui/AnswerBtn";
 
 const HtmlQuiz = () => {
   const { state, theme } = useQuiz();
-  const [question, setQuestion] = useState(htmlQuestions[0]);
-  const [answer, setAnswer] = useState("");
-  const [btn, setBtn] = useState(false);
+  const [question, setQuestion] = useState<Question>(htmlQuestions[0]);
+  const [answer, setAnswer] = useState<string>("");
+  const [btn, setBtn] = useState<boolean>(false);
 
   return (
     <section className="flex justify-center items-center flex-col h-screen ">
@@ -44,7 +45,7 @@ const HtmlQuiz = () => {
               {state.error && <ErrorAnswer />}
 
               <div className="md:grid md:grid-cols-2 md:gap-6 md:mb-5 flex flex-col gap-3 mb-3">
-                {question.options.map((option, index) => (
+                {question.options.map((option: string, index: number) => (
                   <div key={index}>
                     <AnswerBtn
                       option={option}
